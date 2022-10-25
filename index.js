@@ -4,6 +4,7 @@ import cors from 'cors';
 import { database } from './database/database.js';
 import { User } from './entities/users/users.model.js';
 import { usersRoutes } from './entities/users/users.routes.js';
+import { authRoutes } from './entities/auth/auth.routes.js';
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.urlencoded({
 }));
 
 app.use('/users', usersRoutes);
+app.use('/auth', authRoutes);
 
 const start = async () => {
   try {
