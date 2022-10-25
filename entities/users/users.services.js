@@ -1,7 +1,7 @@
 import { User } from './users.model.js';
 
 class UsersServices {
-  getAllUsers = async (req, res) => {
+  getAllUsers = async () => {
     try {
       const users = await User.findAll({
         raw: true,
