@@ -59,7 +59,8 @@ class AuthServices {
         id: user.dataValues.users_id,
         email: user.dataValues.email,
       }, process.env.SECRET_KEY, {
-        expiresIn: '10s',
+        // expiresIn: '1d',
+        expiresIn: '30m'
       });
       
       const {password: _password, ...userWithoutPassword} = user.dataValues;
@@ -100,8 +101,8 @@ class AuthServices {
       },
         process.env.SECRET_KEY,
       {
-        // expiresIn: '30m'
-        expiresIn: '10s'
+        expiresIn: '30m'
+        // expiresIn: '1d'
       }
     );
 
